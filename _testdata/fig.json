@@ -1,0 +1,41 @@
+{
+	"db": {
+		"image": "orchardup/postgresql",
+		"ports": [
+			"5432"
+		]
+	},
+	"web": {
+		"build": ".",
+		"command": "/bin/bash -l -c \"deploy/start_services.sh\"",
+		"volumes": [
+			".:/var/www",
+			"./log:/var/volume1/log"
+		],
+		"ports": [
+			"80:80"
+		],
+		"links": [
+			"db"
+		],
+		"environment": {
+			"INI_DB_USERNAME": "docker",
+			"INI_DB_PASSWORD": "docker"
+		}
+	},
+	"test": {
+		"build": ".",
+		"command": "/bin/bash -l -c \"deploy/test_setup.sh\"",
+		"volumes": [
+			".:/var/www",
+			"/var/www/public/uploads"
+		],
+		"links": [
+			"db"
+		],
+		"environment": {
+			"INI_DB_USERNAME": "docker",
+			"INI_DB_PASSWORD": "docker"
+		}
+	}
+}
