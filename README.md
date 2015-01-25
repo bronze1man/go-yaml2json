@@ -6,13 +6,13 @@ Convert YAML to JSON.
 
 ## Installation
 ```bash
-go get -u gopkg.in/peter-edge/yaml2json.v1
+go get -u github.com/peter-edge/yaml2json
 ```
 
 ## Import
 ```go
 import (
-    "gopkg.in/peter-edge/yaml2json.v1"
+    "github.com/peter-edge/yaml2json"
 )
 ```
 
@@ -24,7 +24,7 @@ the same effect.
     	"io/ioutil"
     	"os"
 
-    	"gopkg.in/peter-edge/yaml2json.v1"
+    	"github.com/peter-edge/yaml2json"
     )
 
     func ReadYamlToJson(yamlFilePath string) (interface{}, error) {
