@@ -9,7 +9,7 @@ tool with the same effect.
 		"io/ioutil"
 		"os"
 
-		"github.com/peter-edge/yaml2json"
+		"github.com/peter-edge/go-yaml2json"
 	)
 
 	func ReadYamlToJson(yamlFilePath string) (interface{}, error) {
